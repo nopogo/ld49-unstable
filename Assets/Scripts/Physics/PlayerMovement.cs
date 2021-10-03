@@ -51,7 +51,13 @@ public class PlayerMovement : Singleton<PlayerMovement> {
 
 
     void FixedUpdate(){
-        if(GameState.instance.isGameOver){
+        if(GameState.instance.isGameOver || GameState.instance.hasStarted == false){
+            jetPackSource.mute        = true;
+            jetpackLight.enabled      = false;
+            rightSideEmission.enabled = false;
+            leftSideEmission.enabled  = false;
+            downSideEmission.enabled  = false;
+            topSideEmission.enabled   = false;
             return;
         }
         PlayerMovementInput();
@@ -115,7 +121,7 @@ public class PlayerMovement : Singleton<PlayerMovement> {
         rightSideEmission.enabled = killMomentum || horizontalAxis < 0 || rollDirection > 0;
         leftSideEmission.enabled  = killMomentum || horizontalAxis > 0 || rollDirection < 0;
         downSideEmission.enabled  = killMomentum || verticalAxis > 0;
-        topSideEmission.enabled   = killMomentum || verticalAxis < 0;
+        topSideEmission.enabled   = killMomentum || verticalAxis < 0;        
     }
 
     void ApplyLightAndSound(){
@@ -127,9 +133,9 @@ public class PlayerMovement : Singleton<PlayerMovement> {
             jetPackSource.mute   = true;
         }
         if(rightSideEmission.enabled && leftSideEmission.enabled == false){
-            jetPackSource.panStereo = 1f;
+            jetPackSource.panStereo = .7f;
         }else if(rightSideEmission.enabled == false && leftSideEmission.enabled){
-            jetPackSource.panStereo = -1f;
+            jetPackSource.panStereo = -.7f;
         }else{
             jetPackSource.panStereo = 0f;
         }

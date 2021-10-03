@@ -14,10 +14,13 @@ public class Spawner : Singleton<Spawner> {
 
     public int maxAsteroids;
 
-    float minAsteroidWait = 1f;
-    float maxAsteroidWait = 10f;
+    
 
-    float maxAsteroidScale = 2;
+    public float minAsteroidWait = 1f;
+    public float maxAsteroidWait = 10f;
+
+    public float minAsteroidScale = .5f;
+    public float maxAsteroidScale = 5;
 
 
 
@@ -45,8 +48,8 @@ public class Spawner : Singleton<Spawner> {
             float waitTime = Random.Range(minAsteroidWait, maxAsteroidWait);
             yield return new WaitForSeconds(waitTime);
             Asteroid tempAsteroid = Instantiate(asteroidPrefab, RandomSpawnLocation(), Random.rotation).GetComponent<Asteroid>();
-            float asteroidScale = Random.Range(1, maxAsteroidScale);
-            tempAsteroid.transform.localScale = new Vector3(asteroidScale, asteroidScale, asteroidScale);
+            float asteroidScale = Random.Range(minAsteroidScale, maxAsteroidScale);
+            tempAsteroid.Initialize(asteroidScale);
             spawnedAsteroids.Add(tempAsteroid);
         }
     }

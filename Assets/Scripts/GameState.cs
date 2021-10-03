@@ -10,10 +10,12 @@ public enum AudioSetting {Unmuted, Muted}
 public class GameState : Singleton<GameState> {
 
     public bool isGameOver = false;
+    public bool hasStarted = false;
 
     public Action GameOverEvent;
     public Action UpdateUIEvent;
     public Action <float> DamageEvent;
+    public Action scoreEvent;
 
     public AudioSetting audioSetting = AudioSetting.Unmuted;
 
@@ -65,11 +67,16 @@ public class GameState : Singleton<GameState> {
 
     public void AddToScore(int amount){
         score += amount;
+        scoreEvent?.Invoke();
         UpdateUIEvent?.Invoke();
     }
 
     public void ResetLvl(){
         SceneManager.LoadScene(0);
+    }
+
+    public void StartGame(){
+        hasStarted = true;
     }
 
 

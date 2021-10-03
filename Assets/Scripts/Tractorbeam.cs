@@ -26,17 +26,26 @@ public class Tractorbeam : Singleton<Tractorbeam> {
     
 
     void FixedUpdate(){
-        if(GameState.instance.isGameOver){
+        if(GameState.instance.isGameOver || GameState.instance.hasStarted == false){
+            PlayerAudio.instance.laser1Source.mute = true;
+            PlayerAudio.instance.laser2Source.mute = true;
             lineRenderer.enabled = false;
             return;
         }
-
-        if(Input.GetMouseButton(0)){
+        
+        
+        if(Input.GetMouseButton(0)){           
+            PlayerAudio.instance.laser1Source.mute = false;
+            PlayerAudio.instance.laser2Source.mute = true;
             ShootTractorBeam(ForceType.Pull);
         }
         else if(Input.GetMouseButton(1)){
+            PlayerAudio.instance.laser1Source.mute = true;
+            PlayerAudio.instance.laser2Source.mute = false;
             ShootTractorBeam(ForceType.Push);
         }else{
+            PlayerAudio.instance.laser1Source.mute = true;
+            PlayerAudio.instance.laser2Source.mute = true;
             lineRenderer.enabled = false;
         }
     }

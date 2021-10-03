@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : Singleton<PlayerMovement> {
 
 
     float horizontalAxis = 0f;
@@ -20,17 +22,42 @@ public class PlayerMovement : MonoBehaviour {
 
     Rigidbody playerRigidbody;
 
+    public ParticleSystem leftParticles;
+    public ParticleSystem rightParticles;
+    public ParticleSystem upParticles;
+    public ParticleSystem downParticles;
 
-    void Awake(){
+    public Light jetpackLight;
+
+    public AudioSource jetPackSource;
+
+
+    EmissionModule rightSideEmission;
+    EmissionModule leftSideEmission;
+    EmissionModule topSideEmission;
+    EmissionModule downSideEmission;
+    
+
+    public override void Awake(){
+        base.Awake();
         playerRigidbody     = GetComponent<Rigidbody>();
         angularDragStart    = playerRigidbody.angularDrag;
         dragStart           = playerRigidbody.drag;
+        rightSideEmission   = rightParticles.emission;
+        leftSideEmission    = leftParticles.emission;
+        topSideEmission     = upParticles.emission;
+        downSideEmission    = downParticles.emission;
     }
 
 
     void FixedUpdate(){
+        if(GameState.instance.isGameOver){
+            return;
+        }
         PlayerMovementInput();
         ApplyPlayerMovementForce();
+        ApplyParticles();
+        ApplyLightAndSound();
     }
 
     void PlayerMovementInput(){
@@ -72,6 +99,37 @@ public class PlayerMovement : MonoBehaviour {
         playerRigidbody.AddForce(transform.right * horizontalAxis * jetPackForceMultiplier, ForceMode.Impulse);
         //Roll
         playerRigidbody.AddTorque(transform.forward * rollDirection * torque, ForceMode.Impulse);
+    }
+
+
+
+    void OnCollisionEnter(Collision coll){
+        Debug.Log($"{coll.relativeVelocity.magnitude}");
+        GameState.instance.DamageEvent?.Invoke(coll.relativeVelocity.magnitude);
+    }
+
+    void ApplyParticles(){
+        rightSideEmission.enabled = killMomentum || horizontalAxis < 0 || rollDirection > 0;
+        leftSideEmission.enabled  = killMomentum || horizontalAxis > 0 || rollDirection < 0;
+        downSideEmission.enabled  = killMomentum || verticalAxis > 0;
+        topSideEmission.enabled   = killMomentum || verticalAxis < 0;
+    }
+
+    void ApplyLightAndSound(){
+        if(rightSideEmission.enabled || leftSideEmission.enabled || downSideEmission.enabled || topSideEmission.enabled){
+            jetpackLight.enabled = true;
+            jetPackSource.mute   = false;
+        }else{
+            jetpackLight.enabled = false;
+            jetPackSource.mute   = true;
+        }
+        if(rightSideEmission.enabled && leftSideEmission.enabled == false){
+            jetPackSource.panStereo = 1f;
+        }else if(rightSideEmission.enabled == false && leftSideEmission.enabled){
+            jetPackSource.panStereo = -1f;
+        }else{
+            jetPackSource.panStereo = 0f;
+        }
     }
     
 }

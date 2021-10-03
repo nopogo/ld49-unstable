@@ -3,16 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyAsteroids : MonoBehaviour {
+public class DestroyAsteroids : Singleton<DestroyAsteroids> {
     
-    Action AsteroidDestroyed;
+    public Action <Asteroid> AsteroidDestroyed;
 
     void OnTriggerEnter(Collider other) {
         Asteroid asteroid = other.GetComponent<Asteroid>();
         if( asteroid != null){
             Destroy(other.gameObject);
-            ScoreUI.instance.AddToScore(asteroid.points);
-            AsteroidDestroyed?.Invoke();
+            GameState.instance.AddToScore(asteroid.points);
+            AsteroidDestroyed?.Invoke(asteroid);
         }
         
     }

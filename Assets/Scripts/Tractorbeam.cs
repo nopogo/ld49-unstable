@@ -26,6 +26,11 @@ public class Tractorbeam : Singleton<Tractorbeam> {
     
 
     void FixedUpdate(){
+        if(GameState.instance.isGameOver){
+            lineRenderer.enabled = false;
+            return;
+        }
+
         if(Input.GetMouseButton(0)){
             ShootTractorBeam(ForceType.Pull);
         }

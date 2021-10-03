@@ -33,7 +33,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_76f40c6815e846b5aaa7e18a66b0a9a6:
-        m_Texture: {fileID: 2800000, guid: e2f604af714ac4246b35a1983246f6f2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 061e2264ed81a074db3b13eadeeb2d6a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -124,10 +124,10 @@ Material:
     m_Colors:
     - Color_3f162312872642939e668af69baaa72f: {r: 1.1353015, g: 1.0758616, b: 0.029719934, a: 0.5254902}
     - Color_8d10a208054646209d46e81a9ce3c16e: {r: 0, g: 0, b: 0, a: 0}
-    - Vector2_bbcabea5c1c14e659c0233614ea728e8: {r: 0, g: -0.5, b: 0, a: 0}
+    - Vector2_bbcabea5c1c14e659c0233614ea728e8: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_c60bc05bcad74edf87eb66999eec8e71: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
-    - Vector2_e65618a99bb84f35a3d63021a8a81647: {r: 1.8, g: 0.34, b: 0, a: 0}
-    - Vector2_e9ed6dcfc6ad4e17ac1dc4c3bc32f757: {r: 1.8, g: 0.34, b: 0, a: 0}
+    - Vector2_e65618a99bb84f35a3d63021a8a81647: {r: 0.75, g: 0.375, b: 0, a: 0}
+    - Vector2_e9ed6dcfc6ad4e17ac1dc4c3bc32f757: {r: 0.75, g: 0.375, b: 0, a: 0}
     - Vector2_ec70661480d34e65827939c9af141941: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

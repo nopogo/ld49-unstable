@@ -104,6 +104,9 @@ public class PlayerMovement : Singleton<PlayerMovement> {
 
 
     void OnCollisionEnter(Collision coll){
+        if(coll.transform.tag == "harmless"){
+            return;
+        }
         Debug.Log($"{coll.relativeVelocity.magnitude}");
         GameState.instance.DamageEvent?.Invoke(coll.relativeVelocity.magnitude);
     }

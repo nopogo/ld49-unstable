@@ -228,7 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 97772171}
   - component: {fileID: 97772172}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 336377189}
   - component: {fileID: 336377193}
   - component: {fileID: 336377192}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DestroyZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1332,7 +1332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &513336332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1835,7 +1835,7 @@ GameObject:
   - component: {fileID: 591465020}
   - component: {fileID: 591465024}
   - component: {fileID: 591465023}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: VisualColider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1961,9 +1961,9 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2436,7 +2436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ctrl
+  m_text: Shift
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0e303c699938cf247aed3adf1b34b1f3, type: 2}
   m_sharedMaterial: {fileID: -4041911035275808812, guid: 0e303c699938cf247aed3adf1b34b1f3, type: 2}
@@ -2704,7 +2704,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You are an astronount trying to refuel. Grab the astroids and bring them
+  m_text: You are an astronaut trying to refuel. Grab the astroids and bring them
     over to your spacecraft. But be careful.... This is not a stable environment.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0e303c699938cf247aed3adf1b34b1f3, type: 2}
@@ -3256,6 +3256,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2132500466}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1653867438}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 513336331}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &964776932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3464,7 +3500,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1679275de72f30c45930a82aa3f9dce1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.211
   m_Pitch: 0.02
   Loop: 1
   Mute: 1
@@ -3854,7 +3890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 2.47, z: -10}
+  m_FollowOffset: {x: 0, y: 1.4, z: -10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -4515,7 +4551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1405406149}
   - component: {fileID: 1405406150}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5132,7 +5168,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 58.399994, y: 0}
+  m_AnchoredPosition: {x: 58.399963, y: 0}
   m_SizeDelta: {x: 830.7, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1513003202
@@ -5694,7 +5730,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614545160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.71, z: -10}
+  m_LocalPosition: {x: 0, y: 3.6399999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1034130275}
@@ -5713,13 +5749,13 @@ GameObject:
   - component: {fileID: 1653867441}
   - component: {fileID: 1653867440}
   - component: {fileID: 1653867439}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Spaceship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1653867439
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5834,7 +5870,7 @@ Camera:
   m_GameObject: {fileID: 1687258581}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.0233624, g: 0.026904695, b: 0.14150941, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -5876,7 +5912,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.71, z: -10}
+  m_LocalPosition: {x: 0, y: 3.6399999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6126,7 +6162,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6617,7 +6653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1810500669}
   - component: {fileID: 1810500670}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6920,8 +6956,8 @@ MonoBehaviour:
   parentTransform: {fileID: 2132500470}
   tractorbeamDistance: 10
   tractorbeamForce: 20
-  pullMaterial: {fileID: 2100000, guid: 340802d9bf1d0484d9fb438634b9127f, type: 2}
-  pushMaterial: {fileID: 2100000, guid: 81cefb4438e16e74384463ba5742e560, type: 2}
+  pullMaterial: {fileID: 2100000, guid: 1e4e86d1980a9d74e99011d5d48c2f65, type: 2}
+  pushMaterial: {fileID: 2100000, guid: 492ad74329c0b6f4f9569c7d140d61cf, type: 2}
 --- !u!4 &2103166309
 Transform:
   m_ObjectHideFlags: 0
@@ -6955,7 +6991,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 340802d9bf1d0484d9fb438634b9127f, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7242,7 +7278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &2132500467
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7437,7 +7473,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.014e-42, y: -2.5678547e-25, z: 4.5904e-41, w: 0}
+  m_BoundingSphereOverride: {x: 5.25e-43, y: 3.18e-43, z: 0, w: -0.000000021838858}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0

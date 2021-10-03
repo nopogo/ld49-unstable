@@ -67,7 +67,7 @@ public class PlayerMovement : Singleton<PlayerMovement> {
     }
 
     void PlayerMovementInput(){
-        if(Input.GetKey(KeyCode.LeftControl)){
+        if(Input.GetKey(KeyCode.LeftShift)){
             killMomentum     = true;
             return;
         }else{

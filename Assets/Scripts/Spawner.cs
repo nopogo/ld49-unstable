@@ -33,6 +33,10 @@ public class Spawner : Singleton<Spawner> {
         // yield return new WaitUntil(()=> PlayerMovement.instance != null);
         // playerMovement = PlayerMovement.instance;
         // Debug.Log($"3");
+        for (int i = 0; i < 15; i++)
+        {
+            SpawnAsteroid();
+        }
         StartCoroutine(SpawnAsteroids());
     }
 
@@ -47,11 +51,15 @@ public class Spawner : Singleton<Spawner> {
             yield return new WaitUntil(()=> spawnedAsteroids.Count < maxAsteroids);
             float waitTime = Random.Range(minAsteroidWait, maxAsteroidWait);
             yield return new WaitForSeconds(waitTime);
-            Asteroid tempAsteroid = Instantiate(asteroidPrefab, RandomSpawnLocation(), Random.rotation).GetComponent<Asteroid>();
+            SpawnAsteroid();
+        }
+    }
+
+    void SpawnAsteroid(){
+        Asteroid tempAsteroid = Instantiate(asteroidPrefab, RandomSpawnLocation(), Random.rotation).GetComponent<Asteroid>();
             float asteroidScale = Random.Range(minAsteroidScale, maxAsteroidScale);
             tempAsteroid.Initialize(asteroidScale);
             spawnedAsteroids.Add(tempAsteroid);
-        }
     }
 
 

@@ -49,6 +49,9 @@ public class PlayerAudio : Singleton<PlayerAudio> {
     }
 
     void PlayRandomDamageSound(float amount){
+        if(amount <= GameState.instance.maxDamageAllowed){
+            return;
+        }
         StartCoroutine(PlayDamageSequence());
 
         if(GameState.instance.playerLives < 2){

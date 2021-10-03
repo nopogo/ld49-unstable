@@ -29,6 +29,9 @@ public class PlayerUI : Singleton<PlayerUI>{
     }
 
     void OnPlayerDamage(float amount){
+        if(amount <= GameState.instance.maxDamageAllowed){
+            return;
+        }
         StartCoroutine(ShowDamagePopup());
     }
 

@@ -15,7 +15,7 @@ Todo:
   ✔ damage particles @done(21-10-03 15:47)
   ☐ ship model
   ☐ player model
-  ☐ skybox?
+  ✔ skybox? @done(21-10-03 21:36)
   ☐ beam effect
   ✔ maybe audio settings? @done(21-10-03 16:26)
   ✔ visible drop zone for asteroids @done(21-10-03 11:04)
@@ -23,5 +23,5 @@ Todo:
   ✘ "special asteroids" that heal a life or give more points (higher Y lvl determines special chance) @cancelled(21-10-03 19:55)
   ✘ other hazzards that harm player? @cancelled(21-10-03 19:55)
   ✔ intro text to explain the game (START BUTTON) @done(21-10-03 20:19)
-  ☐ proxcheck on asteroid spawn (are we in screenspace?)
+  ✘ proxcheck on asteroid spawn (are we in screenspace?) @cancelled(21-10-03 21:36)
   ✔ soundscape/soundtrack @done(21-10-03 20:43)

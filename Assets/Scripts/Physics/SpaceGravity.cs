@@ -6,8 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class SpaceGravity : MonoBehaviour{
 
-    float randomForceMax = 0.15f;
-    float randomForceMin = 0.1f;
+    public float randomForceMax = 0.15f;
+    public float randomForceMin = 0.1f;
 
     void Awake(){
         RandomInitialTorque();

@@ -16,7 +16,7 @@ Todo:
   ☐ ship model
   ☐ player model
   ✔ skybox? @done(21-10-03 21:36)
-  ☐ beam effect
+  ✔ beam effect @done(21-10-03 21:50)
   ✔ maybe audio settings? @done(21-10-03 16:26)
   ✔ visible drop zone for asteroids @done(21-10-03 11:04)
   ✘ indicator of drop zone location @cancelled(21-10-03 16:56)

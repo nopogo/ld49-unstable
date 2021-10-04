@@ -54,7 +54,7 @@ public class Tractorbeam : Singleton<Tractorbeam> {
     void ShootTractorBeam(ForceType forceType){
         RaycastHit[] hits;
 
-        hits = Physics.RaycastAll(parentTransform.position, parentTransform.up * tractorbeamDistance);
+        hits = Physics.RaycastAll(parentTransform.position, parentTransform.up, tractorbeamDistance);
         float closestPointDistance = 0f;
         Vector3 closestPoint = parentTransform.up * tractorbeamDistance;
         foreach(RaycastHit hit in hits){

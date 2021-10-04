@@ -8,7 +8,7 @@ public class PlayerMovement : Singleton<PlayerMovement> {
 
 
     float horizontalAxis = 0f;
-    float verticalAxis = 0f;
+    public float verticalAxis = 0f;
     bool killMomentum = false;
 
     //Constants
@@ -113,7 +113,6 @@ public class PlayerMovement : Singleton<PlayerMovement> {
         if(coll.transform.tag == "harmless"){
             return;
         }
-        Debug.Log($"{coll.relativeVelocity.magnitude}");
         GameState.instance.DamageEvent?.Invoke(coll.relativeVelocity.magnitude);
     }
 

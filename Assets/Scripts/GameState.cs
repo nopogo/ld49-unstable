@@ -18,9 +18,12 @@ public class GameState : Singleton<GameState> {
     public Action scoreEvent;
 
     public AudioSetting audioSetting = AudioSetting.Unmuted;
+    public BoxCollider shipCollider;
 
 
     public TMP_Text muteUnmuteText;
+    public Animator shipAnimator;
+    public LineRenderer playerTether;
 
 
     public int score = 0;
@@ -76,7 +79,21 @@ public class GameState : Singleton<GameState> {
     }
 
     public void StartGame(){
+        StartCoroutine(StartGameSequence());
+    }
+
+    IEnumerator StartGameSequence(){
+        shipAnimator.SetTrigger("Start");
         hasStarted = true;
+        PlayerMovement.instance.verticalAxis = 1f;
+        yield return new WaitUntil(()=> PlayerMovement.instance.transform.position.y >=.2f);
+        playerTether.enabled = true;
+        yield return new WaitForSeconds(5f);
+        
+        
+        yield return new WaitUntil(()=> PlayerMovement.instance.transform.position.y >=5);
+        PlayerMovement.instance.verticalAxis = 0f;
+        shipCollider.enabled = true;        
     }
 
 
